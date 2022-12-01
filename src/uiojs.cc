@@ -59,8 +59,8 @@ Napi::Value _process_write(const Napi::CallbackInfo& info) {
 }
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-  exports.Set(Napi::String::New(env, "_process_read"), Napi::Function::New(env, _process_read));
-  exports.Set(Napi::String::New(env, "_process_write"), Napi::Function::New(env, _process_write));
+  exports.Set(Napi::String::New(env, "_process_read"), Napi::Function::New(env, _process_read, "_process_read"));
+  exports.Set(Napi::String::New(env, "_process_write"), Napi::Function::New(env, _process_write, "_process_write"));
   return exports;
 }
 
