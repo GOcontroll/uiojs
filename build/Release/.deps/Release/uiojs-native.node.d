@@ -1,0 +1,1 @@
+cmd_Release/uiojs-native.node := ln -f "Release/obj.target/uiojs-native.node" "Release/uiojs-native.node" 2>/dev/null || (rm -rf "Release/uiojs-native.node" && cp -af "Release/obj.target/uiojs-native.node" "Release/uiojs-native.node")

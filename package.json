@@ -1,0 +1,26 @@
+{
+  "main": "lib/binding.js",
+  "dependencies": {
+    "node-addon-api": "^1.1.0"
+  },
+  "scripts": {
+    "test": "node --napi-modules ./test/test_binding.js"
+  },
+  "gypfile": true,
+  "name": "uiojs",
+  "version": "1.0.0",
+  "description": "Exposes Linux Userspace IO functions to javascript",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GOcontroll/uiojs.git"
+  },
+  "keywords": [
+    "UIO"
+  ],
+  "author": "Maud Spierings",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/GOcontroll/uiojs/issues"
+  },
+  "homepage": "https://github.com/GOcontroll/uiojs#readme"
+}
