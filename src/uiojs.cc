@@ -17,13 +17,15 @@ Napi::Value _process_read(const Napi::CallbackInfo& info) {
     Napi::TypeError::New(env, "Wrong arguments").ThrowAsJavaScriptException();
     return env.Null();
   }
+  uint8_t *buffer = info[2].As<Napi::Buffer<uint8_t>>().Data();
+
   struct iovec remote[1];
   struct iovec local[1];
 
   remote[0].iov_base = (void *) info[1].As<Napi::Number>().Int64Value();
   remote[0].iov_len = info[3].As<Napi::Number>().Int64Value();
 
-  local[0].iov_base = info[2];
+  local[0].iov_base = buffer;
   local[0].iov_len = info[3].As<Napi::Number>().Int64Value();
 
   pid_t pid = info[0].As<Napi::Number>().Uint32Value();
@@ -44,13 +46,16 @@ Napi::Value _process_write(const Napi::CallbackInfo& info) {
     Napi::TypeError::New(env, "Wrong arguments").ThrowAsJavaScriptException();
     return env.Null();
   }
+
+  uint8_t *buffer = info[2].As<Napi::Buffer<uint8_t>>().Data();
+
   struct iovec remote[1];
   struct iovec local[1];
 
   remote[0].iov_base = (void *) info[1].As<Napi::Number>().Int64Value();
   remote[0].iov_len = info[3].As<Napi::Number>().Int64Value();
 
-  local[0].iov_base = info[2];
+  local[0].iov_base = buffer;
   local[0].iov_len = info[3].As<Napi::Number>().Int64Value();
 
   pid_t pid = info[0].As<Napi::Number>().Uint32Value();
