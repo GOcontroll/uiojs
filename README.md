@@ -12,10 +12,11 @@ int64 and uint64 have not been tested yet, I have no use for them at this point,
 https://github.com/GOcontroll/uiojs/issues
 
 ## installing
-
-"dependencies": {\
-        "uiojs": "1.0.5"\
-    },
+```
+"dependencies": {
+    "uiojs": "1.0.5"
+},
+```
 include the dependency in your package.json and npm install
 
 or download the source and install it manually from the source
