@@ -33,7 +33,7 @@ asap_dutycycle = new asap_element(address, dataType, arraySize);
 pid = 2842;   //automate looking up the pid of the process you would like to influence, this is just a simple example
 
 let dutycycle = process_read(pid, asap_dutycycle);
-# do some work
+// do some work
 let new_dutycycle = 900
 process_write(pid, asap_dutycycle, new_dutycycle);
 
