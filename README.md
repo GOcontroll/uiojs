@@ -24,18 +24,18 @@ or download the source and install it manually from the source
 ```
 import { dataTypes, asap_element, process_read, process_write } from "uiojs";
 
-let address = 0x422540;                  #the memory address to read from
-let dataType = dataTypes.uint16;         #the value to read is an unsigned 16 bit integer
-let arraySize = 1;                       #it is a single value and not an array
+let address = 0x422540;                  //the memory address to read from
+let dataType = dataTypes.uint16;         //the value to read is an unsigned 16 bit integer
+let arraySize = 1;                       //it is a single value and not an array
 
 asap_dutycycle = new asap_element(address, dataType, arraySize);
 
-pid = 2842;   #automate looking up the pid of the process you would like to influence, this is just a simple example
+pid = 2842;   //automate looking up the pid of the process you would like to influence, this is just a simple example
 
 let dutycycle = process_read(pid, asap_dutycycle);
 # do some work
 let new_dutycycle = 900
 process_write(pid, asap_dutycycle, new_dutycycle);
 
-#process_read(pid, asap_dutycycle) == 900 now
+//process_read(pid, asap_dutycycle) == 900 now
 ```
