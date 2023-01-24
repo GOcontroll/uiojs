@@ -14,7 +14,7 @@ https://github.com/GOcontroll/uiojs/issues
 ## installing
 ```
 "dependencies": {
-    "uiojs": "1.0.5"
+    "uiojs": "1.0.6"
 },
 ```
 include the dependency in your package.json and npm install
@@ -40,3 +40,12 @@ process_write(pid, asap_dutycycle, new_dutycycle);
 
 //process_read(pid, asap_dutycycle) == 900 now
 ```
+
+these functions are also methods of the asap_element class:
+
+```
+let dutycycle = asap_dutycycle.process_read(pid)
+asap_dutycycle.process_write(pid, new_dutycycle)
+```
+
+The regular process_read and process_write might be deprecated or altered to serve a more generic purpose at some point.
