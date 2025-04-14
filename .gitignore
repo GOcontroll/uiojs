@@ -2,3 +2,5 @@
 debian/nodejs/
 debian/node-uiojs/
 debian/.debhelper/
+todo
+node_modules

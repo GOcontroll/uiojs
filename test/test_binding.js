@@ -16,6 +16,8 @@ let int8Par   = new asap_element(0x422583, dataTypes.int8,   1);
 let int8Arr   = new asap_element(0x422580, dataTypes.int8,   3);
 let uint8Par  = new asap_element(0x4225b3, dataTypes.uint8,  1);
 let uint8Arr  = new asap_element(0x4225b0, dataTypes.uint8,  3);
+let boolPar   = new asap_element(0x4225b3, dataTypes.boolean,1);
+let boolArr  = new asap_element(0x4225b0, dataTypes.boolean,3);
 
 let pid = 2131;
 
@@ -23,23 +25,23 @@ console.log("testing doubles\n");
 
 console.log(process_read(pid, doublePar));
 process_write(pid, doublePar, 2500.2851);
-console.log(process_read(pid, doublePar));
+console.assert(process_read(pid, doublePar) == 2500.2851);
 process_write(pid, doublePar, 0);
-console.log(process_read(pid, doublePar));
+console.assert(process_read(pid, doublePar) == 0);
 
 console.log(process_read(pid, doubleArr));
 process_write(pid, doubleArr, [2500.2851, 10.6, -1000.684]);
-console.log(process_read(pid, doubleArr));
+console.assert(process_read(pid,doubleArr) == [2500.2851, 10.6, -1000.684]);
 process_write(pid, doubleArr, [0,0,0]);
-console.log(process_read(pid, doubleArr));
+console.assert(process_read(pid,doubleArr) == [0, 0, 0]);
 
 console.log("testing singles\n");
 
 console.log(process_read(pid, singlePar));
 process_write(pid, singlePar, 2500.2851);
-console.log(process_read(pid, singlePar));
+console.assert(process_read(pid, singlePar) == 2500.2851);
 process_write(pid, singlePar, 0);
-console.log(process_read(pid, singlePar));
+console.assert(process_read(pid, singlePar) == 0);
 
 console.log(process_read(pid, singleArr));
 process_write(pid, singleArr, [2500.2851, 10.6, -1000.684]);
@@ -51,17 +53,17 @@ console.log("testing int32\n");
 
 console.log(process_read(pid, int32Par));
 process_write(pid, int32Par, 2500000);
-console.log(process_read(pid, int32Par));
+console.assert(process_read(pid,int32Par) == 2500000);
 process_write(pid, int32Par, -600000);
-console.log(process_read(pid, int32Par));
+console.assert(process_read(pid,int32Par) == -600000);
 process_write(pid, int32Par, 0);
-console.log(process_read(pid, int32Par));
+console.assert(process_read(pid,int32Par) == 0);
 
 console.log(process_read(pid, int32Arr));
 process_write(pid, int32Arr, [2500000, 10, -1000000]);
-console.log(process_read(pid, int32Arr));
+console.assert(process_read(pid, int32Arr) == [2500000, 10, -1000000]);
 process_write(pid, int32Arr, [0,0,0]);
-console.log(process_read(pid, int32Arr));
+console.assert(process_read(pid, int32Arr) == [0, 0, 0]);
 
 console.log("testing uint32\n");
 
@@ -136,3 +138,17 @@ process_write(pid, uint8Arr, [250, 10, 45]);
 console.log(process_read(pid, uint8Arr));
 process_write(pid, uint8Arr, [0,0,0]);
 console.log(process_read(pid, uint8Arr));
+
+console.log("testing boolean\n");
+
+console.log(process_read(pid, boolPar));
+process_write(pid, boolPar, 200);
+console.log(process_read(pid, boolPar));
+process_write(pid, boolPar, 0);
+console.log(process_read(pid, boolPar));
+
+console.log(process_read(pid, boolArr));
+process_write(pid, boolArr, [250, 10, 45]);
+console.log(process_read(pid, boolArr));
+process_write(pid, boolArr, [0,0,0]);
+console.log(process_read(pid, boolArr));

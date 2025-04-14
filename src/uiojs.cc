@@ -1,5 +1,5 @@
 #define _GNU_SOURCE
-#define NAPI_EXPERIMENTAL
+//#define NAPI_EXPERIMENTAL
 #include <sys/uio.h>
 #include <stdint.h>
 #include <napi.h>
@@ -14,7 +14,12 @@ Napi::Value _process_read(const Napi::CallbackInfo& info) {
   }
 
   if (!info[0].IsNumber() || !info[1].IsNumber() || !info[2].IsBuffer() || !info[3].IsNumber()) {
-    Napi::TypeError::New(env, "Wrong arguments").ThrowAsJavaScriptException();
+    if (!info[0].IsNumber()){
+      Napi::TypeError::New(env, "PID is not a number").ThrowAsJavaScriptException();
+    }
+    else if (!info[1].IsNumber()){
+      Napi::TypeError::New(env, "Address is not a number").ThrowAsJavaScriptException();
+    }
     return env.Null();
   }
   uint8_t *buffer = info[2].As<Napi::Buffer<uint8_t>>().Data();
@@ -43,7 +48,12 @@ Napi::Value _process_write(const Napi::CallbackInfo& info) {
   }
 
   if (!info[0].IsNumber() || !info[1].IsNumber() || !info[2].IsBuffer() || !info[3].IsNumber()) {
-    Napi::TypeError::New(env, "Wrong arguments").ThrowAsJavaScriptException();
+    if (!info[0].IsNumber()){
+      Napi::TypeError::New(env, "PID is not a number").ThrowAsJavaScriptException();
+    }
+    else if (!info[1].IsNumber()){
+      Napi::TypeError::New(env, "Address is not a number").ThrowAsJavaScriptException();
+    }
     return env.Null();
   }
 

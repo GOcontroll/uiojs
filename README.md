@@ -14,7 +14,7 @@ https://github.com/GOcontroll/uiojs/issues
 ## installing
 ```
 "dependencies": {
-    "uiojs": "1.0.6"
+    "uiojs": "1.1.1"
 },
 ```
 include the dependency in your package.json and npm install
