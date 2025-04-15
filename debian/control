@@ -6,7 +6,8 @@ Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
  dh-sequence-nodejs,
- node-gyp
+ node-gyp,
+ npm
 Standards-Version: 4.6.2
 Homepage: https://github.com/GOcontroll/uiojs
 
@@ -15,6 +16,7 @@ Architecture: any
 Multi-Arch: foreign
 Depends:
  ${misc:Depends},
+ ${shlibs:Depends},
  nodejs (>= ${nodejs:Version}),
 Provides: ${nodejs:Provides}
 Description: A node addon for making Userspace IO on Linux accessible by javascript

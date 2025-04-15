@@ -1,6 +1,8 @@
 /build
-debian/nodejs/
-debian/node-uiojs/
 debian/.debhelper/
+debian/node-uiojs
+debian/debhelper-build-stamp
+debian/files
+debian/node-uiojs.substvars
 todo
 node_modules

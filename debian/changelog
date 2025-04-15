@@ -1,3 +1,9 @@
+uiojs (1.1.1) unstable; urgency=medium
+
+  * Fix gyp build for trixie
+
+ -- Maud Spierings <maudspierings@gocontroll.com>  Tue, 15 Apr 2025 12:18:59 +0200
+
 uiojs (0.1.0) unstable; urgency=medium
 
   * Initial release.

@@ -1,3 +1,3 @@
-node-uiojs-dbgsym_0.1.0_arm64.deb debug optional automatic=yes
-node-uiojs_0.1.0_arm64.deb javascript optional
-uiojs_0.1.0_arm64.buildinfo javascript optional
+node-uiojs-dbgsym_1.1.1_arm64.deb debug optional automatic=yes
+node-uiojs_1.1.1_arm64.deb javascript optional
+uiojs_1.1.1_arm64.buildinfo javascript optional

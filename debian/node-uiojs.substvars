@@ -1,4 +1,4 @@
-nodejs:Version=18.19.0+dfsg
-shlibs:Depends=libc6 (>= 2.17), libgcc-s1 (>= 3.0), libnode108 (>= 18.19.0+dfsg), libstdc++6 (>= 5.2)
+nodejs:Version=20.19.0+dfsg
+shlibs:Depends=libc6 (>= 2.17), libgcc-s1 (>= 3.0), libnode115 (>= 20.19.0+dfsg), libstdc++6 (>= 5.2)
 misc:Depends=
 misc:Pre-Depends=
